@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sahil - Developer Portfolio</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet" />
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+
+  <!-- AOS Animation Library -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background: linear-gradient(to right, #0f0c29, #302b63, #24243e);
+      color: white;
+      font-family: 'Poppins', sans-serif;
+      padding: 10px -3px;
+    }
+
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      height: 80px;
+      background-color: rgba(18, 18, 62, 0.9);
+      padding: 0 30px;
+      flex-wrap: wrap;
+    }
+
+    .left {
+      font-size: 1.7rem;
+      font-weight: 700;
+      color: #a1a1ff;
+    }
+
+    nav ul {
+      display: flex;
+      flex-wrap: wrap;
+      list-style: none;
+    }
+
+    nav ul li {
+      margin: 0 15px;
+    }
+
+    nav ul li a {
+      color: white;
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.3s ease;
+    }
+
+    nav ul li a:hover {
+      color: #a1a1ff;
+    }
+
+    .firstSection {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      padding: 60px 20px;
+      gap: 2rem;
+    }
+
+    .leftSection {
+      font-size: 2.5rem;
+      width: 100%;
+      max-width: 500px;
+    }
+
+    .leftSection span {
+      color: #a1a1ff;
+    }
+
+    .leftSection div {
+      font-size: 1.8rem;
+      margin-top: 10px;
+      color: #b4b4ff;
+    }
+
+    .rightSection {
+      width: 100%;
+      max-width: 400px;
+      text-align: center;
+    }
+
+    .rightSection img {
+      width: 100%;
+      max-width: 300px;
+      border-radius: 20px;
+      margin-top: 20px;
+      border: 2px solid #a1a1ff;
+    }
+
+    .resume-btn {
+      margin-top: 20px;
+      padding: 10px 25px;
+      border: none;
+      background-color: #a1a1ff;
+      color: black;
+      border-radius: 8px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: box-shadow 0.3s ease;
+    }
+
+    .resume-btn:hover {
+      box-shadow: 0 0 10px #a1a1ff, 0 0 20px #a1a1ff;
+    }
+
+    .social-icons {
+      margin-top: 20px;
+    }
+
+    .social-icons a {
+      color: white;
+      font-size: 24px;
+      margin-right: 15px;
+      transition: color 0.3s;
+    }
+
+    .social-icons a:hover {
+      color: #a1a1ff;
+    }
+
+    .secondSection {
+      padding: 60px 20px;
+    }
+
+    .secondSection h1 {
+      text-align: center;
+      margin-bottom: 40px;
+      font-size: 2rem;
+    }
+
+    .box {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 40px;
+    }
+
+    .vertical {
+      text-align: center;
+      max-width: 200px;
+    }
+
+    .image-top {
+      width: 60px;
+      height: 60px;
+      object-fit: cover;
+      border-radius: 50%;
+      background-color: white;
+      padding: 5px;
+    }
+
+    .vertical-title {
+      margin-top: 15px;
+      font-size: 1rem;
+      font-weight: bold;
+    }
+
+    .vertical-desc {
+      margin-top: 10px;
+      font-size: 0.9rem;
+      color: #ccc;
+    }
+
+    hr {
+      border: 1px solid #444;
+      margin: 50px auto;
+      width: 80%;
+    }
+
+    footer {
+      background: #0e0e1a;
+      color: #ccc;
+      padding: 40px 20px 20px;
+      text-align: center;
+    }
+
+    .footer-container {
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    .footer-content h2 {
+      color: #a1a1ff;
+      font-size: 1.8rem;
+      margin-bottom: 10px;
+    }
+
+    .footer-content p {
+      font-size: 1rem;
+      margin-bottom: 20px;
+    }
+
+    .footer-social {
+      margin: 20px 0;
+    }
+
+    .footer-social a {
+      color: white;
+      margin: 0 10px;
+      font-size: 1.5rem;
+      transition: color 0.3s ease;
+    }
+
+    .footer-social a:hover {
+      color: #a1a1ff;
+    }
+
+    .footer-bottom {
+      border-top: 1px solid #444;
+      margin-top: 20px;
+      padding-top: 15px;
+      font-size: 0.9rem;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      nav ul {
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+      }
+
+      .firstSection {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .leftSection, .rightSection {
+        width: 100%;
+      }
+
+      .leftSection {
+        font-size: 2rem;
+      }
+
+      .leftSection div {
+        font-size: 1.3rem;
+      }
+
+      .resume-btn {
+        margin: 20px auto 0;
+      }
+
+      .footer-content h2 {
+        font-size: 1.5rem;
+      }
+
+      .footer-social a {
+        font-size: 1.3rem;
+        margin: 0 8px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation -->
+  <header>
+    <nav>
+      <div class="left">Sahil's Portfolio</div>
+      <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Hero Section -->
+  <main>
+    <section class="firstSection" id="home">
+      <div class="leftSection" data-aos="fade-right">
+        Hi, My name is <span>Sahil Pal</span>
+        <div>and I am a passionate</div>
+        <div id="roleText"></div>
+        <a href="resume.pdf" download>
+          <button class="resume-btn">Download Resume</button>
+        </a>
+        <div class="social-icons">
+          <a href="https://github.com/sahilpal1" target="_blank"><i class="fab fa-github"></i></a>
+          <a href="https://linkedin.com/in/sahilpal" target="_blank"><i class="fab fa-linkedin"></i></a>
+        </div>
+      </div>
+      <div class="rightSection" data-aos="fade-left">
+        <img src="./photos.png" alt="Sahil's Profile Picture" />
+      </div>
+    </section>
+
+    <hr />
+
+    <!-- Experience Section -->
+    <section class="secondSection" id="experience">
+      <h1>Work Experience</h1>
+      <div class="box">
+        <div class="vertical" data-aos="zoom-in">
+          <img class="image-top" src="./logo/js.png" alt="JS Icon" />
+          <div class="vertical-title">JS Developer (2021–2022)</div>
+          <div class="vertical-desc">Built scalable web apps using JavaScript and modern frameworks.</div>
+        </div>
+
+        <div class="vertical" data-aos="zoom-in">
+          <img class="image-top" src="./logo/nodejs.jpeg" alt="Node.js Icon" />
+          <div class="vertical-title">Node.js Developer (2022–2023)</div>
+          <div class="vertical-desc">Built APIs and real-time services with Node.js & Express.</div>
+        </div>
+
+        <div class="vertical" data-aos="zoom-in">
+          <img class="image-top" src="./logo/react-512.webp" alt="React Icon" />
+          <div class="vertical-title">React Developer (2023–2024)</div>
+          <div class="vertical-desc">Built dynamic interfaces with React, Redux, and Hooks.</div>
+        </div>
+
+        <div class="vertical" data-aos="zoom-in">
+          <img class="image-top" src="./logo/software.jpeg" alt="PHP Icon" />
+          <div class="vertical-title">Software Developer (2024–2025)</div>
+          <div class="vertical-desc">Developed web apps using PHP, Laravel & MySQL.</div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-container">
+      <div class="footer-content">
+        <h2>Sahil's Developer Portfolio</h2>
+        <p>Crafting code, creating impact. Let's build something amazing together!</p>
+        <div class="footer-social">
+          <a href="https://github.com/sahilpal1" target="_blank"><i class="fab fa-github"></i></a>
+          <a href="https://linkedin.com/in/sahilpal" target="_blank"><i class="fab fa-linkedin"></i></a>
+          <a href="mailto:sahilpal06072004@gmail.com"><i class="fas fa-envelope"></i></a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2025 Sahil Pal. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- AOS Script -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init();
+  </script>
+
+  <!-- Typing Effect Script -->
+  <script>
+    const roles = ["Web Developer", "Graphic Designer"];
+    let roleIndex = 0;
+    let charIndex = 0;
+    const roleText = document.getElementById("roleText");
+    const speed = 100;
+    const delay = 1500;
+
+    function typeWriter() {
+      if (charIndex < roles[roleIndex].length) {
+        roleText.innerHTML += roles[roleIndex].charAt(charIndex);
+        charIndex++;
+        setTimeout(typeWriter, speed);
+      } else {
+        setTimeout(eraseText, delay);
+      }
+    }
+
+    function eraseText() {
+      if (charIndex > 0) {
+        roleText.innerHTML = roles[roleIndex].substring(0, charIndex - 1);
+        charIndex--;
+        setTimeout(eraseText, speed);
+      } else {
+        roleIndex = (roleIndex + 1) % roles.length;
+        setTimeout(typeWriter, speed);
+      }
+    }
+
+    typeWriter();
+  </script>
+
+</body>
+</html>
